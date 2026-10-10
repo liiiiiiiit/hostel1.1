@@ -1,0 +1,118 @@
+import { Hostel } from '../types';
+
+export const HOSTELS: Hostel[] = [
+  {
+    id: 'h1', slug: 'ararat-backpackers', city: 'Yerevan', address: '12 Abovyan Street, Yerevan',
+    lat: 40.1834, lng: 44.5135, amenities: ['WiFi', 'Breakfast', 'Kitchen', 'Lounge', 'Laundry', '24h Reception'],
+    checkInTime: '14:00', checkOutTime: '11:00', cancellationPolicy: 'Free cancellation up to 24 hours before check-in.',
+    image: 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&h=500&fit=crop',
+    gallery: ['https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&h=500&fit=crop'],
+    published: true,
+    translations: {
+      en: { name: 'Ararat Backpackers Hostel', description: 'A vibrant backpacker hostel in the heart of Yerevan, steps from Republic Square. Perfect for meeting fellow travelers and exploring Armenian culture.' },
+      ru: { name: 'Хостел Арарат Бэкпэкерс', description: 'Яркий хостел в центре Еревана, в нескольких шагах от площади Республики. Идеально для знакомства с попутчиками и армянской культурой.' },
+      hy: { name: 'Արdelays Բdelays', description: 'Delays delays delays delays delays delays delays delays delays delays delays.' },
+      fa: { name: 'هاستل آرارات بکپکرز', description: 'یک هاستل پر جنب و جوش در قلب ایروان، چند قدمی میدان جمهوری. مکانی عالی برای آشنایی با مسافران و فرهنگ ارمنی.' },
+    },
+    rooms: [
+      { id: 'r1', hostelId: 'h1', type: 'dorm', beds: 8, pricePerNight: 8000, translations: { en: { name: '8-Bed Mixed Dorm', description: 'Comfortable bunk beds in a shared dormitory' }, ru: { name: '8-местный общий номер', description: 'Удобные двухъярусные кровати в общем номере' }, hy: { name: 'Delays', description: 'Delays' }, fa: { name: 'خوابگاه ۸ تخت', description: 'تخت‌های راحت در خوابگاه مشترک' } } },
+      { id: 'r2', hostelId: 'h1', type: 'dorm', beds: 4, pricePerNight: 12000, translations: { en: { name: '4-Bed Female Dorm', description: 'Private female-only dormitory' }, ru: { name: '4-местный женский номер', description: 'Женский общий номер' }, hy: { name: 'Delays', description: 'Delays' }, fa: { name: 'خوابگاه ۴ تخت زنانه', description: 'خوابگاه مخصوص بانوان' } } },
+      { id: 'r3', hostelId: 'h1', type: 'private', beds: 2, pricePerNight: 22000, translations: { en: { name: 'Private Double Room', description: 'Cozy private room with ensuite bathroom' }, ru: { name: 'Приватный двухместный номер', description: 'Уютный приватный номер с ванной' }, hy: { name: 'Delays', description: 'Delays' }, fa: { name: 'اتاق دوبل خصوصی', description: 'اتاق خصوصی دنج با حمام اختصاصی' } } },
+    ],
+  },
+  {
+    id: 'h2', slug: 'cascade-city-stay', city: 'Yerevan', address: '5 Moskovyan Street, Yerevan',
+    lat: 40.1880, lng: 44.5100, amenities: ['WiFi', 'Breakfast', 'Rooftop Terrace', 'Bar', 'Kitchen', 'Tours'],
+    checkInTime: '15:00', checkOutTime: '10:00', cancellationPolicy: 'Free cancellation up to 48 hours before check-in.',
+    image: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&h=500&fit=crop',
+    gallery: [],
+    published: true,
+    translations: {
+      en: { name: 'Cascade City Stay', description: 'Modern hostel near the Cascade complex with stunning rooftop views of Mount Ararat. Features a social bar and organized city tours.' },
+      ru: { name: 'Каскад Сити Стей', description: 'Современный хостел рядом с комплексом Каскад с потрясающим видом на гору Арарат с крыши. Социальный бар и организованные экскурсии.' },
+      hy: { name: 'Delays Delays', description: 'Delays delays delays delays delays delays delays delays delays delays delays delays.' },
+      fa: { name: 'کاسکید سیتی استی', description: 'هاستل مدرن نزدیک مجموعه کاسکید با چشم‌انداز خیره‌کننده کوه آرارات از پشت بام. بار اجتماعی و تورهای شهری.' },
+    },
+    rooms: [
+      { id: 'r4', hostelId: 'h2', type: 'dorm', beds: 6, pricePerNight: 9000, translations: { en: { name: '6-Bed Mixed Dorm', description: 'Spacious shared dormitory' }, ru: { name: '6-местный общий номер', description: 'Просторный общий номер' }, hy: { name: 'Delays', description: 'Delays' }, fa: { name: 'خوابگاه ۶ تخت', description: 'خوابگاه مشترک وسیع' } } },
+      { id: 'r5', hostelId: 'h2', type: 'dorm', beds: 10, pricePerNight: 6500, translations: { en: { name: '10-Bed Economy Dorm', description: 'Budget-friendly large dormitory' }, ru: { name: '10-местный эконом', description: 'Большой бюджетный номер' }, hy: { name: 'Delays', description: 'Delays' }, fa: { name: 'خوابگاه اقتصادی ۱۰ تخت', description: 'خوابگاه بزرگ اقتصادی' } } },
+      { id: 'r6', hostelId: 'h2', type: 'private', beds: 1, pricePerNight: 28000, translations: { en: { name: 'Single Private Room', description: 'Private room with city view' }, ru: { name: 'Одноместный приватный номер', description: 'Приватный номер с видом на город' }, hy: { name: 'Delays', description: 'Delays' }, fa: { name: 'اتاق تک خصوصی', description: 'اتاق خصوصی با منظره شهر' } } },
+    ],
+  },
+  {
+    id: 'h3', slug: 'lake-sevan-travelers', city: 'Sevan', address: '3 Sevan Coast Road, Sevan',
+    lat: 40.5483, lng: 44.9514, amenities: ['WiFi', 'Breakfast', 'Lake View', 'BBQ Area', 'Bike Rental', 'Parking'],
+    checkInTime: '14:00', checkOutTime: '11:00', cancellationPolicy: 'Free cancellation up to 72 hours before check-in.',
+    image: 'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=800&h=500&fit=crop',
+    gallery: [],
+    published: true,
+    translations: {
+      en: { name: 'Lake Sevan Travelers Hostel', description: 'Beautiful lakeside hostel with panoramic views of Lake Sevan. Perfect base for exploring the region, with bike rentals and organized excursions.' },
+      ru: { name: 'Хостел Озеро Севан', description: 'Красивый хостел на берегу озера с панорамным видом на озеро Севан. Идеальная база для исследования региона.' },
+      hy: { name: 'Delays Delays', description: 'Delays delays delays delays delays delays delays delays delays.' },
+      fa: { name: 'هاستل مسافران دریاچه سوان', description: 'هاستل زیبای کنار دریاچه با چشم‌انداز پانورامای دریاچه سوان. مکان عالی برای کاوش منطقه.' },
+    },
+    rooms: [
+      { id: 'r7', hostelId: 'h3', type: 'dorm', beds: 6, pricePerNight: 7000, translations: { en: { name: '6-Bed Lake View Dorm', description: 'Dormitory with lake views' }, ru: { name: '6-местный номер с видом', description: 'Общий номер с видом на озеро' }, hy: { name: 'Delays', description: 'Delays' }, fa: { name: 'خوابگاه ۶ تخت با منظره', description: 'خوابگاه با منظره دریاچه' } } },
+      { id: 'r8', hostelId: 'h3', type: 'private', beds: 2, pricePerNight: 18000, translations: { en: { name: 'Lakeside Double Room', description: 'Private room overlooking the lake' }, ru: { name: 'Двухместный у озера', description: 'Приватный номер с видом на озеро' }, hy: { name: 'Delays', description: 'Delays' }, fa: { name: 'اتاق دوبل کنار دریاچه', description: 'اتاق خصوصی رو به دریاچه' } } },
+      { id: 'r9', hostelId: 'h3', type: 'private', beds: 4, pricePerNight: 32000, translations: { en: { name: 'Family Suite', description: 'Spacious suite for families' }, ru: { name: 'Семейный люкс', description: 'Просторный люкс для семей' }, hy: { name: 'Delays', description: 'Delays' }, fa: { name: 'سوئیت خانوادگی', description: 'سوئیت وسیع برای خانواده‌ها' } } },
+    ],
+  },
+  {
+    id: 'h4', slug: 'gyumri-heritage', city: 'Gyumri', address: '8 Rustaveli Street, Gyumri',
+    lat: 40.7893, lng: 43.8489, amenities: ['WiFi', 'Breakfast', 'Library', 'Art Gallery', 'Kitchen', 'Garden'],
+    checkInTime: '14:00', checkOutTime: '11:00', cancellationPolicy: 'Free cancellation up to 24 hours before check-in.',
+    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=500&fit=crop',
+    gallery: [],
+    published: true,
+    translations: {
+      en: { name: 'Gyumri Heritage Hostel', description: 'Charming hostel in a restored 19th-century building in historic Gyumri. Celebrates Armenian art and culture with an on-site gallery and library.' },
+      ru: { name: 'Хостел Наследие Гюмри', description: 'Очаровательный хостел в восстановленном здании XIX века в историческом Гюмри. Празднует армянское искусство и культуру.' },
+      hy: { name: 'Delays Delays', description: 'Delays delays delays delays delays delays delays delays delays delays delays delays.' },
+      fa: { name: 'هاستل میراث گیومری', description: 'هاستل دلنشین در یک ساختمان مرمت شده قرن نوزدهمی در گیومری تاریخی. جشن هنر و فرهنگ ارمنی.' },
+    },
+    rooms: [
+      { id: 'r10', hostelId: 'h4', type: 'dorm', beds: 4, pricePerNight: 7500, translations: { en: { name: '4-Bed Heritage Dorm', description: 'Cozy dorm in heritage setting' }, ru: { name: '4-местный номер', description: 'Уютный общий номер' }, hy: { name: 'Delays', description: 'Delays' }, fa: { name: 'خوابگاه ۴ تخت میراثی', description: 'خوابگاه دنج در فضای میراثی' } } },
+      { id: 'r11', hostelId: 'h4', type: 'private', beds: 2, pricePerNight: 16000, translations: { en: { name: 'Heritage Double Room', description: 'Room with period furnishings' }, ru: { name: 'Двухместный номер', description: 'Номер с антикварной мебелью' }, hy: { name: 'Delays', description: 'Delays' }, fa: { name: 'اتاق دوبل میراثی', description: 'اتاق با مبلمان دوره‌ای' } } },
+      { id: 'r12', hostelId: 'h4', type: 'private', beds: 1, pricePerNight: 14000, translations: { en: { name: 'Artist Single Room', description: 'Single room with creative atmosphere' }, ru: { name: 'Одноместный номер художника', description: 'Номер с творческой атмосферой' }, hy: { name: 'Delays', description: 'Delays' }, fa: { name: 'اتاق تک هنری', description: 'اتاق تک با اتمسفر خلاقانه' } } },
+    ],
+  },
+  {
+    id: 'h5', slug: 'dilijan-forest-backpackers', city: 'Dilijan', address: '15 Forest Road, Dilijan',
+    lat: 40.7425, lng: 44.8664, amenities: ['WiFi', 'Breakfast', 'Hiking Trails', 'Fireplace', 'Garden', 'Nature Tours'],
+    checkInTime: '14:00', checkOutTime: '11:00', cancellationPolicy: 'Free cancellation up to 48 hours before check-in.',
+    image: 'https://images.unsplash.com/photo-1587061949409-02df41d5e562?w=800&h=500&fit=crop',
+    gallery: [],
+    published: true,
+    translations: {
+      en: { name: 'Dilijan Forest Backpackers', description: 'Nature retreat surrounded by the lush forests of Dilijan National Park. Ideal for hikers and nature lovers seeking tranquility.' },
+      ru: { name: 'Дилижан Лес Бэкпэкерс', description: 'Природный курорт в окружении пышных лесов национального парка Дилижан. Идеально для пешеходов и любителей природы.' },
+      hy: { name: 'Delays Delays', description: 'Delays delays delays delays delays delays delays delays delays delays.' },
+      fa: { name: 'بکپکرز جنگل دیلیجان', description: 'اقامتگاه طبیعت محاط توسط جنگل‌های سرسبز پارک ملی دیلیجان. ایده‌آل برای کوهنوردان و دوستداران طبیعت.' },
+    },
+    rooms: [
+      { id: 'r13', hostelId: 'h5', type: 'dorm', beds: 8, pricePerNight: 6000, translations: { en: { name: '8-Bed Forest Dorm', description: 'Shared dorm with forest views' }, ru: { name: '8-местный лесной номер', description: 'Общий номер с видом на лес' }, hy: { name: 'Delays', description: 'Delays' }, fa: { name: 'خوابگاه ۸ تخت جنگلی', description: 'خوابگاه مشترک با منظره جنگل' } } },
+      { id: 'r14', hostelId: 'h5', type: 'private', beds: 2, pricePerNight: 20000, translations: { en: { name: 'Forest Cabin Double', description: 'Cozy cabin-style double room' }, ru: { name: 'Двухместный лесной коттедж', description: 'Уютный номер в стиле коттеджа' }, hy: { name: 'Delays', description: 'Delays' }, fa: { name: 'اتاق دوبل کابین جنگلی', description: 'اتاق دوبل به سبک کابین' } } },
+      { id: 'r15', hostelId: 'h5', type: 'private', beds: 6, pricePerNight: 45000, translations: { en: { name: 'Family Forest Cabin', description: 'Large cabin for families' }, ru: { name: 'Семейный лесной коттедж', description: 'Большой коттедж для семей' }, hy: { name: 'Ընտանdelays Կdelays', description: 'Delays delays delays delays' }, fa: { name: 'کابین خانوادگی جنگلی', description: 'کابین بزرگ برای خانواده' } } },
+    ],
+  },
+  {
+    id: 'h6', slug: 'vanadzor-mountain-stay', city: 'Vanadzor', address: '22 Tumanyan Street, Vanadzor',
+    lat: 40.8133, lng: 44.4961, amenities: ['WiFi', 'Breakfast', 'Mountain View', 'Ski Storage', 'Kitchen', 'Heating'],
+    checkInTime: '14:00', checkOutTime: '11:00', cancellationPolicy: 'Free cancellation up to 24 hours before check-in.',
+    image: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&h=500&fit=crop',
+    gallery: [],
+    published: true,
+    translations: {
+      en: { name: 'Vanadzor Mountain Stay', description: 'Warm and welcoming hostel in Vanadzor with stunning mountain views. Great base for exploring northern Armenia and winter sports.' },
+      ru: { name: 'Ванадзор Маунтин Стей', description: 'Тёплый и гостеприимный хостел в Ванадзоре с потрясающим видом на горы. Отличная база для исследования Северной Армении.' },
+      hy: { name: 'Delays Delays', description: 'Delays delays delays delays delays delays delays delays delays.' },
+      fa: { name: 'وانادزور ماونتین استی', description: 'هاستل گرم و صمیمی در وانادزور با چشم‌انداز کوهستانی خیره‌کننده. پایگاه عالی برای کاوش شمال ارمنستان.' },
+    },
+    rooms: [
+      { id: 'r16', hostelId: 'h6', type: 'dorm', beds: 6, pricePerNight: 5500, translations: { en: { name: '6-Bed Mountain Dorm', description: 'Shared dorm with mountain views' }, ru: { name: '6-местный горный номер', description: 'Общий номер с видом на горы' }, hy: { name: 'Delays', description: 'Delays' }, fa: { name: 'خوابگاه ۶ تخت کوهستانی', description: 'خوابگاه مشترک با منظره کوه' } } },
+      { id: 'r17', hostelId: 'h6', type: 'dorm', beds: 4, pricePerNight: 8000, translations: { en: { name: '4-Bed Premium Dorm', description: 'Premium shared dormitory' }, ru: { name: '4-местный премиум', description: 'Премиум общий номер' }, hy: { name: 'Delays', description: 'Delays' }, fa: { name: 'خوابگاه ۴ تخت پریمیوم', description: 'خوابگاه مشترک پریمیوم' } } },
+      { id: 'r18', hostelId: 'h6', type: 'private', beds: 2, pricePerNight: 17000, translations: { en: { name: 'Mountain View Double', description: 'Private room with mountain panorama' }, ru: { name: 'Двухместный с видом на горы', description: 'Приватный номер с панорамой гор' }, hy: { name: 'Delays', description: 'Delays' }, fa: { name: 'اتاق دوبل با منظره کوه', description: 'اتاق خصوصی با پانورامای کوه' } } },
+    ],
+  },
+];
