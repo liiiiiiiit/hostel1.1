@@ -162,7 +162,7 @@ function Layout({ children }: { children: React.ReactNode }) {
 // ============ HOME PAGE ============
 
 function HomePage() {
-  const { t, locale } = useApp();
+  const { t } = useApp();
   const navigate = useNavigate();
 
   const categories = [
@@ -228,9 +228,9 @@ function HomePage() {
                 </div>
               </div>
               <div className="p-4">
-                <h3 className="font-semibold text-gray-900 group-hover:text-primary-500 transition-colors">{hostel.translations[locale].name}</h3>
+                <h3 className="font-semibold text-gray-900 group-hover:text-primary-500 transition-colors">{hostel.name}</h3>
                 <p className="text-sm text-gray-500 flex items-center gap-1 mt-1"><MapPin size={14} />{t(`city.${hostel.city}`)}</p>
-                <p className="text-sm text-gray-600 mt-2 line-clamp-2">{hostel.translations[locale].description}</p>
+                <p className="text-sm text-gray-600 mt-2 line-clamp-2">{hostel.description}</p>
                 <div className="flex flex-wrap gap-1 mt-3">
                   {hostel.amenities.slice(0, 3).map(a => (
                     <span key={a} className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">{a}</span>
