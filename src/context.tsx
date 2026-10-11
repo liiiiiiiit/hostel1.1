@@ -29,7 +29,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     initializeStore();
     const savedUser = getCurrentUser();
     if (savedUser) setUser(savedUser);
-    const savedLocale = getLocale();
+    const savedLocale = getLocale() as Locale;
     setLocaleState(savedLocale);
   }, []);
 
@@ -40,7 +40,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
 
   const setLocale = useCallback((newLocale: Locale) => {
     setLocaleState(newLocale);
-    saveLocale(newLocale);
+    saveLocale(newLocale as string);
   }, []);
 
   const t = useCallback((key: string): string => {

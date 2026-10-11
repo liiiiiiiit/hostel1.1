@@ -1,4 +1,4 @@
-import { User, Booking, JobApplication, Locale } from './types';
+import { User, UserRole, Booking, JobApplication } from './types';
 import { DEMO_USERS, DEMO_PASSWORDS } from './data/constants';
 import { HOSTELS } from './data/hostels';
 import { JOBS } from './data/jobs';
@@ -125,11 +125,11 @@ export function getCurrentUser(): User | null {
 }
 
 // Locale
-export function getLocale(): Locale {
-  return (localStorage.getItem(STORAGE_KEYS.LOCALE) as Locale) || 'en';
+export function getLocale(): string {
+  return localStorage.getItem(STORAGE_KEYS.LOCALE) || 'en';
 }
 
-export function setLocale(locale: Locale) {
+export function setLocale(locale: string) {
   localStorage.setItem(STORAGE_KEYS.LOCALE, locale);
 }
 

@@ -1,0 +1,93 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: armenia_life_hub_db
+    environment:
+      POSTGRES_DB: armenia_life_hub
+      POSTGRES_USER: armenia_user
+      POSTGRES_PASSWORD: armenia_password
+      POSTGRES_PORT: 5432
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./prisma/schema.prisma:/app/prisma/schema.prisma
+    networks:
+      - armenia_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U armenia_user -d armenia_life_hub"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Backend API (Node.js + Express)
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: armenia_life_hub_backend
+    environment:
+      DATABASE_URL: postgresql://armenia_user:armenia_password@postgres:5432/armenia_life_hub?schema=public
+      NODE_ENV: development
+      PORT: 4000
+      JWT_SECRET: your-super-secret-jwt-key-change-in-production
+    ports:
+      - "4000:4000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - armenia_network
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    command: npm run dev
+
+  # Frontend (React + Vite)
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: armenia_life_hub_frontend
+    environment:
+      VITE_API_URL: http://localhost:4000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - armenia_network
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
+    command: npm run dev
+
+  # Prisma Studio (Database GUI)
+  prisma-studio:
+    image: node:18-alpine
+    container_name: armenia_life_hub_prisma
+    working_dir: /app
+    environment:
+      DATABASE_URL: postgresql://armenia_user:armenia_password@postgres:5432/armenia_life_hub?schema=public
+    ports:
+      - "5555:5555"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - armenia_network
+    volumes:
+      - ./prisma:/app/prisma
+      - ./node_modules:/app/node_modules
+    command: npx prisma studio
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  armenia_network:
+    driver: bridge
