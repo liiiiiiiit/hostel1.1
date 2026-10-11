@@ -1,115 +1,170 @@
-# Armenia Life Hub
+# Armenia Life Hub 🇦🇲
 
-یک پلتفرم چندزبانه برای کمک به گردشگران، دانشجویان بین‌المللی، ساکنان خارجی و جویندگان کار در ارمنستان.
+یک پلتفرم جامع چندزبانه برای کمک به گردشگران، دانشجویان بین‌المللی، ساکنان خارجی و جویندگان کار در ارمنستان.
+
+![Armenia Life Hub](https://images.unsplash.com/photo-1565008576549-57569a49371d?w=1200&h=400&fit=crop)
 
 ## 🌟 ویژگی‌ها
 
 ### ماژول‌های اصلی
-- **سیستم رزرو هاستل**: ۶ هاستل نمونه با مدیریت موجودی و جلوگیری از رزرو تکراری
-- **پلتفرم استخدام**: ۱۲ آگهی شغلی با سیستم درخواست کار
-- **دایرکتوری خدمات محلی**: ۲۵ کسب‌وکار در دسته‌بندی‌های مختلف
-- **راهنمای ارمنستان**: ۲۰ مقاله آموزشی در موضوعات مختلف
 
-### پشتیبانی چندزبانه
-- 🇬🇧 English (انگلیسی)
-- 🇷🇺 Русский (روسی)
-- 🇦🇲 Հայերեն (ارمنی)
-- 🇮🇷 فارسی (فارسی - RTL)
+- **🏨 سیستم رزرو هاستل**: ۶ هاستل نمونه با مدیریت موجودی و جلوگیری از رزرو تکراری
+- **💼 پلتفرم استخدام**: ۱۲ آگهی شغلی با سیستم درخواست کار
+- **🏪 دایرکتوری خدمات محلی**: ۲۵ کسب‌وکار در دسته‌بندی‌های مختلف
+- **📚 راهنمای ارمنستان**: ۲۰ مقاله آموزشی در موضوعات مختلف
 
-### نقش‌های کاربری
-- **SUPER_ADMIN**: دسترسی کامل به تمام بخش‌ها
-- **HOSTEL_MANAGER**: مدیریت هاستل‌ها و رزروها
-- **EMPLOYER**: مدیریت آگهی‌های شغلی
-- **JOB_SEEKER**: ارسال درخواست کار
-- **GUEST**: مرور عمومی و رزرو
+### ویژگی‌های فنی
 
-## 🛠️ معماری فنی
-
-### Frontend (پیاده‌سازی شده)
-- **React 18** با TypeScript
-- **React Router** برای مسیریابی
-- **Tailwind CSS** برای استایل‌دهی
-- **Lucide React** برای آیکون‌ها
-- **localStorage** برای شبیه‌سازی پایگاه داده
-
-### Backend (ساختار آماده برای PostgreSQL)
-- **Node.js** با Express.js (ساختار API آماده)
-- **PostgreSQL** به عنوان پایگاه داده اصلی
-- **Prisma ORM** برای مدیریت پایگاه داده
-- **IndexedDB (Dexie.js)** برای شبیه‌سازی در محیط توسعه
-
-### ساختار پروژه
-```
-src/
-├── api/              # API Layer (شبیه‌سازی Express.js)
-├── database/         # Database Schema (Dexie.js + Prisma)
-├── services/         # Service Layer (Business Logic)
-├── components/       # React Components
-├── data/             # Static Data & Constants
-├── i18n.ts          # Translations
-├── store.ts         # Data Access Layer
-└── App.tsx          # Main Application
-
-prisma/
-└── schema.prisma    # PostgreSQL Schema (آماده برای migration)
-```
+- ✅ **زبان فارسی کامل** با پشتیبانی RTL
+- ✅ **طراحی واکنش‌گرا** (Responsive) برای موبایل و دسکتاپ
+- ✅ **سیستم احراز هویت** با نقش‌های کاربری مختلف
+- ✅ **پنل کاربری** برای مدیریت رزروها و درخواست‌ها
+- ✅ **پنل مدیریت** برای نظارت بر کل سیستم
+- ✅ **جستجو و فیلتر** پیشرفته در تمام بخش‌ها
+- ✅ **ذخیره‌سازی محلی** با localStorage
 
 ## 🚀 شروع سریع
 
-### نصب وابستگی‌ها
+### پیش‌نیازها
+
+- Node.js نسخه 18 یا بالاتر
+- npm یا yarn
+
+### نصب
+
 ```bash
+# کلون کردن مخزن
+git clone https://github.com/your-username/armenia-life-hub.git
+
+# ورود به پوشه پروژه
+cd armenia-life-hub
+
+# نصب وابستگی‌ها
 npm install
 ```
 
-### اجرای در حالت توسعه
+### اجرا در حالت توسعه
+
 ```bash
 npm run dev
 ```
 
+سپس مرورگر خود را باز کنید و به آدرس `http://localhost:5173` بروید.
+
 ### ساخت برای تولید
+
 ```bash
 npm run build
+```
+
+فایل‌های ساخته شده در پوشه `dist` قرار می‌گیرند.
+
+### پیش‌نمایش ساخت تولید
+
+```bash
+npm run preview
 ```
 
 ## 🔐 حساب‌های آزمایشی
 
 | نقش | ایمیل | رمز عبور |
 |-----|--------|----------|
-| Super Admin | admin@demo.example.com | DemoAdmin!2026#Hub |
-| Hostel Manager | hostel.manager@demo.example.com | DemoHostel!2026#Hub |
-| Employer | employer@demo.example.com | DemoEmployer!2026#Hub |
-| Job Seeker | jobseeker@demo.example.com | DemoSeeker!2026#Hub |
-| Guest | guest@demo.example.com | DemoGuest!2026#Hub |
+| مدیر کل | admin@demo.example.com | DemoAdmin!2026#Hub |
+| مدیر هاستل | hostel.manager@demo.example.com | DemoHostel!2026#Hub |
+| کارفرما | employer@demo.example.com | DemoEmployer!2026#Hub |
+| جوینده کار | jobseeker@demo.example.com | DemoSeeker!2026#Hub |
+| مهمان | guest@demo.example.com | DemoGuest!2026#Hub |
 
-## 🗄️ مهاجرت به PostgreSQL واقعی
+## 📁 ساختار پروژه
 
-### مرحله ۱: نصب Prisma
+```
+armenia-life-hub/
+├── src/
+│   ├── App.tsx              # کامپوننت اصلی برنامه
+│   ├── main.tsx             # نقطه ورود برنامه
+│   ├── index.css            # استایل‌های عمومی
+│   ├── types.ts             # تعاریف TypeScript
+│   ├── context.tsx          # مدیریت state برنامه
+│   ├── i18n.ts              # ترجمه‌های فارسی
+│   ├── store.ts             # مدیریت داده‌ها
+│   ├── data/
+│   │   ├── constants.ts     # ثابت‌ها و داده‌های اولیه
+│   │   ├── hostels.ts       # داده‌های هاستل‌ها
+│   │   ├── jobs.ts          # داده‌های مشاغل
+│   │   └── content.ts       # داده‌های خدمات و مقالات
+│   ├── database/
+│   │   ├── schema.ts        # ساختار پایگاه داده
+│   │   └── seed.ts          # داده‌های نمونه
+│   ├── services/
+│   │   ├── auth.service.ts  # سرویس احراز هویت
+│   │   ├── hostel.service.ts # سرویس هاستل
+│   │   ├── job.service.ts   # سرویس مشاغل
+│   │   └── content.service.ts # سرویس محتوا
+│   └── api/
+│       └── index.ts         # لایه API
+├── prisma/
+│   └── schema.prisma        # ساختار PostgreSQL
+├── backend/
+│   └── server.ts            # نمونه سرور Express.js
+├── public/                  # فایل‌های عمومی
+├── dist/                    # فایل‌های ساخته شده
+├── index.html               # فایل HTML اصلی
+├── package.json             # وابستگی‌ها و اسکریپت‌ها
+├── tsconfig.json            # تنظیمات TypeScript
+├── vite.config.js           # تنظیمات Vite
+├── tailwind.config.js       # تنظیمات Tailwind CSS
+├── .gitignore              # فایل‌های نادیده Git
+├── LICENSE                 # مجوز پروژه
+└── README.md               # این فایل
+```
+
+## 🛠️ فناوری‌های استفاده شده
+
+### Frontend
+- **React 18** - کتابخانه UI
+- **TypeScript** - زبان برنامه‌نویسی
+- **Vite** - ابزار ساخت
+- **Tailwind CSS** - فریمورک CSS
+- **React Router** - مسیریابی
+- **Lucide React** - آیکون‌ها
+
+### Backend (ساختار آماده)
+- **Node.js** - محیط اجرا
+- **Express.js** - فریمورک وب
+- **PostgreSQL** - پایگاه داده
+- **Prisma ORM** - مدیریت پایگاه داده
+- **IndexedDB (Dexie.js)** - پایگاه داده محلی
+
+## 🌐 مهاجرت به PostgreSQL
+
+برای استفاده از پایگاه داده واقعی PostgreSQL:
+
+### ۱. نصب Prisma
+
 ```bash
 npm install prisma @prisma/client
 npx prisma init
 ```
 
-### مرحله ۲: تنظیم DATABASE_URL
+### ۲. تنظیم DATABASE_URL
+
 فایل `.env` را ایجاد کنید:
+
 ```env
 DATABASE_URL="postgresql://user:password@localhost:5432/armenia_life_hub?schema=public"
 ```
 
-### مرحله ۳: اجرای Migration
+### ۳. اجرای Migration
+
 ```bash
 npx prisma migrate dev --name init
 ```
 
-### مرحله ۴: Seed کردن پایگاه داده
-```bash
-npx prisma db seed
-```
+### ۴. تغییر Service Layer
 
-### مرحله ۵: تغییر Service Layer
 فایل‌های `src/services/*.ts` را تغییر دهید تا از Prisma Client استفاده کنند:
 
 ```typescript
-// مثال: auth.service.ts
 import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
@@ -123,26 +178,18 @@ export const AuthService = {
 };
 ```
 
-### مرحله ۶: ایجاد Express.js Server
-یک سرور Express.js جداگانه ایجاد کنید:
+### ۵. ایجاد سرور Express.js
 
-```bash
-mkdir backend
-cd backend
-npm init -y
-npm install express cors helmet bcryptjs jsonwebtoken @prisma/client
-```
-
-سپس API routes را از `src/api/index.ts` به سرور Express منتقل کنید.
+از فایل `backend/server.ts` به عنوان نمونه استفاده کنید.
 
 ## 📊 ساختار پایگاه داده
 
 ### جداول اصلی
+
 - **users**: اطلاعات کاربران و نقش‌ها
 - **hostels**: اطلاعات هاستل‌ها
-- **hostel_translations**: ترجمه‌های هاستل (4 زبان)
+- **hostel_translations**: ترجمه‌های هاستل
 - **room_types**: انواع اتاق‌ها
-- **room_type_translations**: ترجمه‌های اتاق‌ها
 - **bookings**: رزروها
 - **jobs**: آگهی‌های شغلی
 - **job_translations**: ترجمه‌های شغل‌ها
@@ -151,134 +198,84 @@ npm install express cors helmet bcryptjs jsonwebtoken @prisma/client
 - **business_translations**: ترجمه‌های کسب‌وکارها
 - **articles**: مقالات
 - **article_translations**: ترجمه‌های مقالات
-- **audit_logs**: لاگ‌های امنیتی
-
-### روابط کلیدی
-- هر Hostel دارای چندین Translation و RoomType است
-- هر Booking به یک User، Hostel و RoomType متصل است
-- هر Job دارای چندین Translation و Application است
-- تمام ترجمه‌ها از الگوی [entityId + locale] استفاده می‌کنند
 
 ## 🔒 امنیت
 
 ### پیاده‌سازی شده
-- رمزگذاری رمز عبور (در تولید از bcrypt/argon2 استفاده کنید)
-- اعتبارسنجی ورودی
-- مدیریت session
-- کنترل دسترسی مبتنی بر نقش
+
+- ✅ رمزگذاری رمز عبور
+- ✅ اعتبارسنجی ورودی
+- ✅ مدیریت session
+- ✅ کنترل دسترسی مبتنی بر نقش
 
 ### توصیه‌های تولید
+
 - استفاده از HTTPS
 - تنظیم rate limiting
 - پیاده‌سازی CSRF protection
 - استفاده از environment variables
 - فعال‌سازی security headers
-- پیاده‌سازی audit logging
-
-## 🌐 بین‌المللی‌سازی (i18n)
-
-### ساختار ترجمه
-```typescript
-// src/i18n.ts
-export const translations = {
-  en: { 'nav.home': 'Home', ... },
-  ru: { 'nav.home': 'Главная', ... },
-  hy: { 'nav.home': 'Գլdelays', ... },
-  fa: { 'nav.home': 'خانه', ... },
-};
-```
-
-### پشتیبانی RTL
-فارسی به صورت خودکار RTL می‌شود:
-```typescript
-document.documentElement.dir = locale === 'fa' ? 'rtl' : 'ltr';
-```
-
-## 📱 Responsive Design
-
-- Mobile-first approach
-- Breakpoints: sm (640px), md (768px), lg (1024px)
-- Touch-friendly interfaces
-- Optimized for all screen sizes
-
-## 🧪 تست
-
-### تست‌های پیشنهادی
-```bash
-# Unit Tests
-npm test
-
-# Integration Tests
-npm run test:integration
-
-# E2E Tests
-npm run test:e2e
-```
-
-## 📈 بهینه‌سازی عملکرد
-
-### پیاده‌سازی شده
-- Lazy loading برای تصاویر
-- Code splitting با React Router
-- Memoization با React.memo
-- Debounced search
-
-### توصیه‌های تولید
-- استفاده از CDN برای assets
-- پیاده‌سازی caching strategy
-- بهینه‌سازی تصاویر با WebP
-- استفاده از service workers
-- پیاده‌سازی pagination
 
 ## 🚢 استقرار
 
-### Docker Compose (توصیه شده)
+### Docker Compose
+
 ```yaml
 version: '3.8'
 services:
-  frontend:
-    build: ./frontend
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: armenia_life_hub
+      POSTGRES_USER: armenia_user
+      POSTGRES_PASSWORD: armenia_password
     ports:
-      - "3000:3000"
-  
+      - "5432:5432"
+    volumes:
+      - postgres_/var/lib/postgresql/data
+
   backend:
     build: ./backend
+    environment:
+      DATABASE_URL: postgresql://armenia_user:armenia_password@postgres:5432/armenia_life_hub
     ports:
       - "4000:4000"
-    environment:
-      - DATABASE_URL=postgresql://...
-  
-  postgres:
-    image: postgres:15
-    environment:
-      - POSTGRES_DB=armenia_life_hub
-      - POSTGRES_USER=user
-      - POSTGRES_PASSWORD=password
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
+    depends_on:
+      - postgres
 
-volumes:
-  postgres_data:
+  frontend:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
 ```
 
-### محیط‌های ابری
+### پلتفرم‌های ابری
+
 - **Vercel**: برای frontend
 - **Railway/Render**: برای backend + PostgreSQL
 - **AWS/Azure**: برای استقرار enterprise
 
-## 📝 توسعه آینده
+## 📝 اسکریپت‌ها
 
-### ویژگی‌های پیشنهادی
-- [ ] سیستم پرداخت آنلاین
-- [ ] چت زنده پشتیبانی
-- [ ] سیستم نظرات و امتیازدهی
-- [ ] اپلیکیشن موبایل (React Native)
-- [ ] API عمومی برای توسعه‌دهندگان
-- [ ] سیستم notification پیشرفته
-- [ ] یکپارچگی با Google Maps
-- [ ] سیستم توصیه‌گر هوشمند
+```bash
+# اجرا در حالت توسعه
+npm run dev
+
+# ساخت برای تولید
+npm run build
+
+# پیش‌نمایش ساخت تولید
+npm run preview
+
+# بررسی نوع‌ها
+npm run typecheck
+```
 
 ## 🤝 مشارکت
+
+مشارکت شما welcome است! لطفاً:
 
 1. Fork کنید
 2. Branch ایجاد کنید (`git checkout -b feature/AmazingFeature`)
@@ -288,13 +285,21 @@ volumes:
 
 ## 📄 مجوز
 
-این پروژه تحت مجوز MIT منتشر شده است.
+این پروژه تحت مجوز MIT منتشر شده است - برای جزئیات فایل [LICENSE](LICENSE) را ببینید.
 
 ## 📞 تماس
 
 - ایمیل: info@armenialifehub.com
 - وب‌سایت: https://armenialifehub.com
 
+## 🙏 تقدیر
+
+- طراحی UI/UX الهام گرفته از پلتفرم‌های مدرن سفر و استخدام
+- آیکون‌ها از [Lucide](https://lucide.dev)
+- فونت‌ها از [Google Fonts](https://fonts.google.com)
+
 ---
 
 **توجه**: این یک پروژه نمایشی است و داده‌های هاستل‌ها، مشاغل و کسب‌وکارها ساختگی هستند.
+
+ساخته شده با ❤️ برای جامعه ارمنستان
