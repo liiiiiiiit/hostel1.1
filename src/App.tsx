@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
-import { Home, Building2, Briefcase, Store, BookOpen, User, LogIn, LogOut, Menu, X, Globe, ChevronRight, MapPin, Clock, Phone, Star, Search, Filter, Calendar, Users, DollarSign, Eye, CheckCircle, XCircle, AlertCircle, Shield, Settings, Bell, ArrowRight, Heart, Wifi, Coffee, Car, Utensils, Dumbbell, GraduationCap, Stethoscope, Banknote, Smartphone, Wrench, Scale, FileText, Bus, Scissors } from 'lucide-react';
+import { Home, Building2, Briefcase, Store, BookOpen, User, LogIn, LogOut, Menu, X, ChevronRight, MapPin, Clock, Phone, Star, Search, Filter, Calendar, Users, DollarSign, Eye, CheckCircle, XCircle, AlertCircle, Shield, Settings, Bell, ArrowRight, Heart, Wifi, Coffee, Car, Utensils, Dumbbell, GraduationCap, Stethoscope, Banknote, Smartphone, Wrench, Scale, FileText, Bus, Scissors } from 'lucide-react';
 import { AppProvider, useApp } from './context';
 import { HOSTELS, JOBS, BUSINESSES, ARTICLES, login, logout, register, getBookings, getUserBookings, createBooking, updateBookingStatus, getApplications, getUserApplications, createApplication, updateApplicationStatus } from './store';
-import { localeNames, getDirection } from './i18n';
-import { Locale, Booking, JobApplication } from './types';
 
 // ============ LAYOUT COMPONENTS ============
 
 function Header() {
-  const { user, setUser, locale, setLocale, t, dir } = useApp();
+  const { user, setUser, t, dir } = useApp();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [langOpen, setLangOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -48,23 +45,6 @@ function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
-            {/* Language Selector */}
-            <div className="relative">
-              <button onClick={() => setLangOpen(!langOpen)} className="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50">
-                <Globe size={16} />
-                <span className="hidden sm:inline">{localeNames[locale]}</span>
-              </button>
-              {langOpen && (
-                <div className="absolute top-full mt-1 end-0 bg-white rounded-lg shadow-lg border py-1 min-w-[160px] animate-slide-down">
-                  {(Object.keys(localeNames) as Locale[]).map(l => (
-                    <button key={l} onClick={() => { setLocale(l); setLangOpen(false); }} className={`w-full text-start px-4 py-2 text-sm hover:bg-gray-50 ${l === locale ? 'text-primary-500 font-medium' : 'text-gray-700'}`}>
-                      {localeNames[l]}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-
             {user ? (
               <div className="flex items-center gap-2">
                 <Link to="/dashboard" className="hidden sm:flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50">

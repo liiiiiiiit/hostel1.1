@@ -1,6 +1,3 @@
-export type Locale = 'en' | 'ru' | 'hy' | 'fa';
-export type Direction = 'ltr' | 'rtl';
-
 export interface User {
   id: string;
   email: string;
@@ -24,7 +21,8 @@ export interface Hostel {
   cancellationPolicy: string;
   image: string;
   gallery: string[];
-  translations: Record<Locale, { name: string; description: string }>;
+  name: string;
+  description: string;
   rooms: RoomType[];
   published: boolean;
 }
@@ -35,7 +33,8 @@ export interface RoomType {
   type: 'dorm' | 'private';
   beds: number;
   pricePerNight: number;
-  translations: Record<Locale, { name: string; description: string }>;
+  name: string;
+  description: string;
 }
 
 export interface Booking {
@@ -66,7 +65,9 @@ export interface Job {
   currency: string;
   deadline: string;
   languages: string[];
-  translations: Record<Locale, { title: string; description: string; requirements: string }>;
+  title: string;
+  description: string;
+  requirements: string;
   published: boolean;
   createdAt: string;
 }
@@ -97,7 +98,9 @@ export interface Business {
   hours: string;
   image: string;
   verified: boolean;
-  translations: Record<Locale, { name: string; description: string; services: string }>;
+  name: string;
+  description: string;
+  services: string;
 }
 
 export interface Article {
@@ -109,14 +112,7 @@ export interface Article {
   publishedAt: string;
   updatedAt: string;
   status: 'draft' | 'published' | 'archived';
-  translations: Record<Locale, { title: string; excerpt: string; content: string }>;
-}
-
-export interface Notification {
-  id: string;
-  userId: string;
-  type: string;
-  message: string;
-  read: boolean;
-  createdAt: string;
+  title: string;
+  excerpt: string;
+  content: string;
 }
